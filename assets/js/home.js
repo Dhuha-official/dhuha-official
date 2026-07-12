@@ -22,7 +22,7 @@ async function loadHomeProducts() {
 
         const card = `
         <div class="card">
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image_url}" alt="${product.name}">
             <div class="card-content">
                 <h3>${product.name}</h3>
                 <p class="price">
