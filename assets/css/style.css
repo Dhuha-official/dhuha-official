@@ -144,3 +144,14 @@ nav a{
     display:inline-block;
     margin-top:35px;
 }
+.best-seller{
+    padding:80px 8%;
+    background:#151515;
+}
+
+.best-seller h2{
+    text-align:center;
+    color:#d4af37;
+    font-size:40px;
+    margin-bottom:40px;
+}
