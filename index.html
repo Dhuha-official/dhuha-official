@@ -120,55 +120,7 @@ All Rights Reserved.
 </p>
 
 </footer>
-<script>
-const SUPABASE_URL = "GANTI_DENGAN_PROJECT_URL";
-const SUPABASE_KEY = "GANTI_DENGAN_PUBLISHABLE_KEY";
 
-const supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
-async function loadProducts() {
-
-  const { data, error } = await supabaseClient
-    .from("products")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    console.error(error);
-    return;
-  }
-
-  const newProducts = document.getElementById("new-products");
-  const bestProducts = document.getElementById("best-products");
-
-  newProducts.innerHTML = "";
-  bestProducts.innerHTML = "";
-
-  data.slice(0, 3).forEach(product => {
-
-    const card = `
-      <div class="card">
-        <img src="${product.image || ''}" alt="${product.name}">
-        <div class="card-content">
-          <h3>${product.name}</h3>
-          <p class="price">Rp${Number(product.price).toLocaleString("id-ID")}</p>
-          <a href="shop.html" class="btn">Lihat Produk</a>
-        </div>
-      </div>
-    `;
-
-    newProducts.innerHTML += card;
-    bestProducts.innerHTML += card;
-
-  });
-
-}
-
-loadProducts();
-</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/home.js"></script>
