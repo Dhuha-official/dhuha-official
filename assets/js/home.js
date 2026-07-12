@@ -6,9 +6,10 @@ async function loadHomeProducts() {
         .order("created_at", { ascending: false });
 
     if (error) {
-        console.error(error);
-        return;
-    }
+    console.error("Supabase Error:", error);
+    alert(error.message);
+    return;
+}
 
     const newProducts = document.getElementById("new-products");
     const bestProducts = document.getElementById("best-products");
