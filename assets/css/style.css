@@ -120,3 +120,27 @@ nav a{
     font-weight:bold;
     cursor:pointer;
 }
+.about{
+    padding:100px 8%;
+    background:#0f0f0f;
+    text-align:center;
+}
+
+.about h2{
+    font-size:40px;
+    color:#d4af37;
+    margin-bottom:25px;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    color:#ddd;
+    font-size:18px;
+}
+
+.about .btn{
+    display:inline-block;
+    margin-top:35px;
+}
