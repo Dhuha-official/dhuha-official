@@ -84,5 +84,47 @@
 
 </section>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://yjddkxffzqowrkkoqwth.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_hid0DW65Zkt-tLC4o56S9g_JXt4_uCK";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+async function loadProducts(){
+
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*");
+
+  if(error){
+    console.log(error);
+    return;
+  }
+
+  const list = document.getElementById("product-list");
+
+  data.forEach(product => {
+
+    list.innerHTML += `
+      <div class="card">
+        <img src="${product.image || ''}">
+        <h3>${product.name}</h3>
+        <p>Rp${product.price}</p>
+        <a href="#" class="btn">Beli</a>
+      </div>
+    `;
+
+  });
+
+}
+
+loadProducts();
+
+    </script>
 </body>
     </html>
