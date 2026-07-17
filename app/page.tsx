@@ -1,3 +1,4 @@
+import ProductGrid from "@/components/ProductGrid";
 import ShopFilter from "@/components/ShopFilter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -52,6 +53,8 @@ export default function Home() {
         <BestSeller />
         
         <ShopFilter />
+
+        <ProductGrid />
         
         <Footer />
 
