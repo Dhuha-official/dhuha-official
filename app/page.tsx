@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NewCollection from "@/components/NewCollection";
 import Image from "next/image";
 
 export default function Home() {
@@ -44,6 +45,8 @@ export default function Home() {
 
         </section>
 
+<NewCollection />
+        
         <Footer />
 
       </main>
