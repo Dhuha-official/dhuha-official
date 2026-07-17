@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,76 +9,44 @@ export default function Home() {
 
       <main>
 
-        {/* Hero */}
-        <section className="h-screen bg-black text-white flex items-center justify-center">
-          <div className="text-center px-6">
+        {/* HERO */}
+        <section className="relative h-screen">
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              DHUHA
-            </h1>
+          <Image
+            src="/images/products/product3.png"
+            alt="DHUHA"
+            fill
+            className="object-cover"
+            priority
+          />
 
-            <p className="text-lg text-gray-300 mb-8">
-              Strength • Purpose • Faith
-            </p>
+          <div className="absolute inset-0 bg-black/60" />
 
-            <Link
-              href="#shop"
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-400 transition"
-            >
-              SHOP NOW
-            </Link>
+          <div className="absolute inset-0 flex items-center justify-center">
 
-          </div>
-        </section>
+            <div className="text-center text-white">
 
-        {/* Shop */}
-        <section
-          id="shop"
-          className="min-h-screen bg-white py-20"
-        >
-          <div className="max-w-7xl mx-auto px-6">
+              <h1 className="text-6xl font-bold">
+                DHUHA
+              </h1>
 
-            <h2 className="text-4xl font-bold text-center mb-12">
-              SHOP
-            </h2>
+              <p className="mt-5 text-xl">
+                Strength • Purpose • Faith
+              </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-              {[1,2,3,4,5,6,7,8].map((item)=>(
-                <div
-                  key={item}
-                  className="border rounded-2xl overflow-hidden shadow hover:shadow-xl transition"
-                >
-
-                  <img
-                    src="/images/products/product.jpg"
-                    alt="Produk DHUHA"
-                    className="aspect-square object-cover"
-                  />
-
-                  <div className="p-4">
-
-                    <h3 className="font-semibold">
-                      DHUHA Collection {item}
-                    </h3>
-
-                    <p className="text-yellow-600 font-bold mt-2">
-                      Rp299.000
-                    </p>
-
-                  </div>
-
-                </div>
-              ))}
+              <button className="mt-10 px-8 py-4 rounded-full bg-white text-black font-bold hover:bg-yellow-400 transition">
+                SHOP NOW
+              </button>
 
             </div>
 
           </div>
+
         </section>
 
-      </main>
+        <Footer />
 
-      <Footer />
+      </main>
     </>
   );
-                  }
+}
